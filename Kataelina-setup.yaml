@@ -1,0 +1,548 @@
+%YAML 1.1
+---
+# created on 12/21/2024 - Prime - Project Reighvan
+
+autostarts:
+  - afk
+  - sanowret-crystal
+  - alias
+  - textsubs
+  - roomnumbers
+
+safe_room: &safe_room 793  #my safe room.  all of the below *safe_room points to this room ID.  This room is the Portal Room in Fang Cove.
+engineering_room: *safe_room
+outfitting_room: *safe_room
+alchemy_room: *safe_room
+enchanting_room: *safe_room
+prehunt_buffing_room: *safe_room
+# hometown: Crossing
+# hometown: Shard
+# hometown: Fang Cove
+fang_cove_override_town: Crossing
+# fang_cove_override_town: Shard
+
+#force_healer_town: Fang Cove #Premium account, I want to use Yrisa
+
+# People have asked me "when do you move hunting zones?"
+# Answer: When your defenses can handle moving up the ladder.  If you have one particular defense (looking at you thief and paladin) that
+# lags behind then you wait till it's good enough to move.
+# Don't chase your offenses.  For most guilds your offenses will always outpace your defenses.
+
+hunting_info: # hunting location and other hunting-buddy/combat-trainer specific information.
+- :zone: # locations are defined in ~lich/scripts/data/base-hunting.yaml
+   - rats
+  # - rats_fang # Fang Cove Rats.  Premium character, high spawn rate.  Got to 25'ish defenses
+  # - salt_crabs_fang  #fang cove salt crabs. - Not as good as I expected, still got me to grass eels.  35'ish defenses
+  # - cougars_vineyard
+  # - grass_eels_incline # grass eels,  not much to say about em.  42 defenses
+  # - animated_items # these were ok.  slowed down in training too soon. Could have just gone to beisswurms instead. 48-50 defenses
+  # - beisswurms # slogging out some ranks here to get TDPS for reflexes and to make endrus_serpents a bit easier. Got to 55 defenses and 25 reflex here
+  # - endrus_serpents # Yep, these are endrus serpents.  good to about 80-85 defenses.
+  # - snowbeasts_dragonspine # Snowbeats in Ilithi stayed till 100'ish defenses
+  # - granite_gargoyles # stop after the next.  These are in Ilithi (shard) Stayed till 120 defenses
+  # - cadaverous_crocodiles #stop after the after. here till 135'ish defenses
+  # - young_blue_dappled_prereni #stop the fourth! evasion training died around 180 ranks
+  # - young_prereni_stones # slightly harder premium baby prereni. evasion training died around 220 ranks, other defenses got to 190-192
+  # - blue_dappled_prereni # next step up the prereni chain. left at 215 shield/parry/defending. 254 evasion.
+  # - blue_prereni_stones # slightly harder middle prereni.  premium area 255's defenses, evasion soft capped at 290 trickled at 300
+  # - elder_blue_dappled_prereni # almost the last step of the Prereni. 280's defenses, evasion soft capped at 330
+  # - elder_prereni_stones # last step of Prereni. (evasion soft capped at 365) 320 defenses, 375 evasion, 315 weapons (still trained ok'ish except evasion but wanted to move)
+  # - onyx_gargoyles_glade
+  # - onyx_gargoyles
+
+
+  # stop_on: # will stop combat if these COMBAT skills mind lock
+  # - Small Edged
+  # - Large Edged
+  # - Twohanded Edged
+  # - Small Blunt
+  # - Large Blunt
+  # - Twohanded Blunt
+  # - Slings
+  # - Bow
+  # - Crossbow
+  # - Staves
+  # - Polearms
+  # - Light Thrown
+  # - Heavy Thrown
+  # - Brawling
+
+  # :duration: 25  # how long to hunt if stop_on: or stop_on_low: metrics are not met.
+  
+  stop_on_low: # will stop combat if these NON-COMBAT skills go low
+  - Stealth
+  - Thievery
+  - Athletics
+  - Locksmithing
+  - Scholarship
+  - Performance
+  - Outdoorsmanship
+
+  # stop_on_burgle_cooldown: true 
+
+hunting_buddies:
+
+combat_trainer_target_increment: 6
+combat_trainer_action_count: 18
+
+
+# Gear settings
+gear:
+# Armor
+- :name: shield
+  :adjective: target
+  :is_leather: false
+  :hinders_lockpicking: true
+  :is_worn: true
+#- :name: gloves # light
+#  :adjective: coarse
+#  :is_leather: true
+#  :hinders_lockpicking: true
+#  :is_worn: true
+#- :name: shirt # light
+#  :adjective: insulated
+#  :is_leather: false
+#  :hinders_lockpicking: true
+#  :is_worn: true
+#- :name: cowl # light
+#  :adjective: coarse
+#  :is_leather: true
+#  :hinders_lockpicking: true
+#  :is_worn: true
+- :adjective: rugged
+  :name: leathers
+  :is_worn: true
+  :hinders_lockpicking: true
+- :adjective: chain
+  :name: helm 
+  :hinders_lockpicking: true
+  :is_worn: true
+  :is_leather: false
+- :adjective: chain
+  :name: gloves #plate
+  :is_leather: false
+  :hinders_lockpicking: true
+- :name: mask # light
+  :adjective: chain
+  :is_leather: false
+  :hinders_lockpicking: true
+  :is_worn: true
+- :name: stick
+  :adjective: parry
+  :is_leather: false
+  :hinders_lockpicking: true
+  :is_worn: true
+# - :name: greaves # brig
+#   :adjective: scale
+#   :is_leather: false
+#   :hinders_lockpicking: true
+#   :is_worn: true
+# - :name: greaves # plate
+#   :adjective: light
+#   :is_leather: false
+#   :hinders_lockpicking: true
+#   :is_worn: true
+# - :name: greaves # chain
+#   :adjective: chain
+#   :is_leather: false
+#   :hinders_lockpicking: true
+#   :is_worn: true
+# Brawling
+# Weapons
+- :adjective: cavalry
+  :name: sabre
+- :adjective: stout
+  :name: broadsword
+- :adjective: pine
+  :name: sledgehammer
+
+
+# cycle_armors:
+#   Plate Armor:
+#   - light greaves
+#   Brigandine:
+#   - scale greaves
+#   Light Armor:
+#   - insulated pants
+#   Chain Armor:
+#   - chain greaves
+
+gear_sets:
+  standard:
+  - target shield
+  - parry stick
+  - chain mask
+  - chain gloves
+  - chain helm
+  - rugged leathers
+
+
+
+training_abilities:
+  Tactics: 80
+  Analyze: 90
+  App Quick: 60
+  Hunt: 90
+  Charged Maneuver:
+    :check: Always
+    :cooldown: 10
+
+charged_maneuvers:
+  Brawling: palmstrike
+  Bow: powershot
+  Crossbow: powershot
+  Slings: powershot
+  Small Edged: cleave
+  Large Edged: cleave
+  Twohanded Edged: cleave
+  Small Blunt: crash
+  Large Blunt: crash
+  Twohanded Blunt: crash
+  Staves: twirl
+  Polearms: impale
+  Dual Wield: doublestrike
+always_use_maneuvers: true
+prioritize_maneuver_doublestrike: true
+dual_load: false 
+
+weapon_training:
+  Small Edged: calvary sabre
+  Large Edged: stout broadsword
+  Twohanded Blunt: pine sledgehammer
+  Brawling: ''
+
+# whirlwind_trainables:
+# - Large Edged
+# - Small Edged
+# - Large Blunt
+# - Small Blunt
+# - Polearms
+# - Staves
+
+doublestrike_trainables:
+- Small Edged
+- Small Blunt
+- Large Edged
+- Large Blunt
+- Staves
+- Polearms
+
+priority_defense: Evasion
+
+restock: # will maintain these levels minimum.
+#  bolt:
+#    quantity: 30
+#  arrow:
+#    quantity: 30
+#  rock:
+    # name: smooth rocks
+    # room: 12172
+    # price: 45
+    # size: 30
+    # stackable: true
+ #   quantity: 30
+
+
+skinning:
+  skin: true
+  arrange_all: false
+  arrange_count: 0
+  tie_bundle: true
+  dissect: true
+  dissect_priority:
+
+
+favor_goal: 15
+favor_god: Everild
+
+full_pouch_container: backpack
+spare_gem_pouch_container: hip tote
+gem_pouch_adjective: dark
+gem_pouch_noun: pouch
+tie_gem_pouches: true
+
+empty_hunting_room_messages:  #intentionally blank.  I don't want to speak when I look for a hunting room
+
+
+buff_nonspells:
+  roar quiet rage: 45
+  barb_buffs:
+#meditations 3 max
+  # - Serenity
+  # - Contemplation
+  # - Tenacity
+#forms 5 max
+  # - Turtle
+  # - Panther
+  # - Python
+  # - Piranha
+  # - Eagle
+  # - Dragon
+  # - Monkey
+  # - Swan
+  # - Buffalo
+  # - Bear
+  # - Wolverine
+#berserks no max
+  - Avalanche
+  # - Drought
+  # - Tsunami
+  # - Famine
+  # - Tornado
+  # - Earthquake
+  # - Wildfire
+  # - Flashflood
+  # - Landslide
+
+waggle_sets:
+  default:
+    # - Piranha
+    # - Python
+    # - Tornado
+    # - Monkey
+  prehunt_buffs:
+    # - Serenity
+    # - Contemplation
+    # - Tenacity
+    # - Piranha
+    # - Python
+    # - Tornado
+    # - Monkey
+
+
+barb_buffs_inner_fire_threshold: 25
+flame_inner_fire_threshold: 15
+flame_expertise_training_threshold: 15
+
+barb_famine_healing:
+  health_threshold: 75
+  inner_fire_threshold: 10
+
+
+training_list:
+- skill: Appraisal
+  start: 18
+  name: Appraisal
+  scripts:
+  - appraisal
+- skill: Scholarship
+  start: 18
+  name: Scholarship
+  scripts:
+  - attunement sigil
+- skill: Athletics
+  start: 18
+  name: Athletics
+  scripts:
+  - athletics max
+- skill: Outdoorsmanship
+  start: 18
+  scripts:
+  - go2 793
+  - outdoorsmanship 32
+- skill: Appraisal
+  start: 18
+  scripts:
+  - go2 793
+  - appraisal
+- skill: Outfitting
+  start: 18
+  name: Outfitting
+  scripts:
+  - workorders tailoring
+- skill: Performance
+  start: 18
+  name: Performance
+  scripts:
+  - go2 793
+  - performance
+- skill:
+  - Small Edged
+  - Large Edged
+  - Twohanded Blunt
+  - Brawling
+  start: 35
+  name: Combat
+  scripts:
+  - checkfavors
+  - crossing-repair
+  - hunting-buddy
+  - safe-room
+  - go2 793
+  - pick
+  - sell-loot
+
+
+pick:
+  debug: false
+  tend_own_wounds: true
+  picking_box_sources:
+  - black backpack
+  trap_blacklist:
+  - teleport
+  - reaper
+  - concussion
+  blacklist_container:
+  too_hard_container:
+skip_lockpick_ring_refill: false
+stop_pick_on_mindlock: false
+harvest_traps: false
+# lockpick_type: stout iron # shard
+lockpick_type: stout #crossing
+lockpick_container: lockpick ring
+
+repair_timer: 3600 #crossing repair wont run more than once every per hour
+
+# appraisal_training: # what to train your appraisal with
+# - pouches
+# - gear
+
+loot_additions:
+- nugget
+- bar
+- tear
+- shard
+- ambergris
+- tooth
+
+
+
+sell_loot_metals_and_stones: true
+sell_loot_metals_and_stones_container: black backpack
+sell_loot_ignored_metals_and_stones:
+# Rare Metals
+- agonite
+- aldamdin
+- animite
+- audrualm
+- coralite
+- damite
+- darkstone
+# - electrum
+- glaes
+- haledroth
+- haralun
+- icesteel
+- indurium
+- kadepa
+- kelpzyte
+- kertig
+- kiralan
+- loimic
+- lumium
+- muracite
+- niello
+- niniam
+- orichalcum
+- platinum
+- quelium
+- silversteel
+- telothian
+- tomiek
+- tyrium
+- vardite
+- yellow gold
+
+outfitting_tools: # self explanitory
+- knitting needle
+#- sewing needle
+#- slickstone
+#- yardstick
+#- scissor
+#- stamp
+
+crafting_container: black backpack
+
+#adding this list to your -setup.yaml file ensures you only accept knitting orders.
+workorder_recipes:
+  tailoring:
+    - a knitted napkin
+    - a knitted armband
+    - a knitted ankleband
+    - some knitted socks
+    - some knitted mittens
+    - a knitted headband
+    - some knitted slippers
+    - a knitted scarf
+    - a knitted hat
+    - some knitted booties
+    - a knitted hood
+    - a knitted towel
+    - some knitted legwarmers
+    - some knitted gloves
+    - a knitted skirt
+    - a knitted shirt
+    - a knitted sweater
+    - some knitted hose
+    - a knitted cloak
+    - a knitted blanket
+
+footwear: 
+circlecheck_prettyprint: true # changes the output of `;circlecheck` to a more readable format
+
+
+custom_hunting_zones:
+  salt_crabs_fang:
+  # - 8312
+  - 8313
+  - 8313
+  - 8316
+  - 8315
+  - 8317
+  blue_dappled_prereni:
+    - 10151
+    - 10148
+    - 10149
+    - 10151
+  black_marble_gargoyles:
+    - 31494
+    - 31500
+    - 31502
+    - 31504
+    # 31506- - bugged with rock formations
+    - 31508
+    - 31512
+    - 31514
+    - 31519
+    - 31521
+    - 31523
+    - 31524
+  mountain_giants:
+    - 4389
+    - 4381
+    - 4378
+    - 4379
+    - 4380
+    - 4382
+    - 4383
+    - 4384
+    - 4385
+    - 4386
+    - 4387
+    - 4393
+    - 4391
+  shard_gryphons: #baby/fledgling
+  - 6245
+  - 6244
+  - 6246
+  - 6247
+  - 6248
+  beltunumshi:
+  - 6975
+  - 6980
+  - 6979
+  - 6977
+  - 6978
+  - 6976
+  - 6974
+  - 6973
+  onyx_gargoyles:
+  - 15880
+  - 15878
+  - 15879
+  - 15877
+  - 15881
+  - 15882
+  - 15883
+  onyx_gargoyles_glade:
+  - 16525

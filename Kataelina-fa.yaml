@@ -1,0 +1,59 @@
+hunting_info:
+- :zone:
+   - rats_fang # 35-40 ranks FA
+  # - grass_eels_incline # hardcap 80 ranks of FA
+  # - beisswurms # use these if you didn't cap eels to get to snowbeasts
+  # - snowbeasts_dragonspine # 120-125 fa
+  # - young_blue_dappled_prereni # 220'ish fa
+  # - young_prereni_stones # 250 fa
+  # - blue_dappled_prereni # 300'ish fa
+  # - blue_prereni_stones # 330-350 fa
+  # - elder_blue_dappled_prereni # 550 fa
+  # - elder_prereni_stones # 600'ish fa
+  # - giant_bears_cave
+  # - giant_bears
+  # - mountain_giants # 800'ish fa
+  # - bulls_plateau # 1000'ish fa
+  # - bulls_vale # 1100'ish fa
+  # - young_wyverns # 1300 fa
+  # - juvenile_wyverns # 1500 fa
+  # - adanf_blademasters # capped fa
+
+  stop_on: # will stop combat if these COMBAT skills lock
+  - First Aid
+  # - Skinning
+  # :duration: 10  # how long to hunt if stop_on: or stop_on_low: metrics are not met.
+  args:
+  - d0
+
+weapon_training:
+  # Bow: nisha shortbow
+  # Small Edged: throwing axe
+  # Small Blunt: gavel
+  # Light Thrown: throwing axe
+  # Offhand Weapon: throwing axe
+  # Heavy Thrown: light spear
+  # Large Edged: round axe
+  Twohanded Edged: bastard sword
+  # Large Blunt: horseman's flail
+  # Twohanded Blunt: footman's flail
+  # Brawling: ''
+  # Polearms: light spear
+  # Staves: nightstick
+  # Crossbow: lockbow
+  # Slings: leather sling
+
+skinning:
+  skin: false
+  arrange_all: false
+  arrange_count: 0
+  tie_bundle: true
+  dissect: true
+  dissect_priority: First Aid #Skinning | First Aid
+  
+combat_buff_waggle: 
+offensive_spells:
+training_abilities:
+combat_spell_training:
+skip_last_kill: true
+buff_spells:
