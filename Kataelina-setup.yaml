@@ -9,7 +9,7 @@ autostarts:
   - textsubs
   - roomnumbers
 
-safe_room: &safe_room 793  #my safe room.  all of the below *safe_room points to this room ID.  This room is the Portal Room in Fang Cove.
+safe_room: &safe_room 1612  #my safe room.  all of the below *safe_room points to this room ID.  This room is Pfanston Grove.
 engineering_room: *safe_room
 outfitting_room: *safe_room
 alchemy_room: *safe_room
@@ -30,7 +30,8 @@ fang_cove_override_town: Crossing
 
 hunting_info: # hunting location and other hunting-buddy/combat-trainer specific information.
 - :zone: # locations are defined in ~lich/scripts/data/base-hunting.yaml
-   - rats
+   #- rats
+   - goblins
   # - rats_fang # Fang Cove Rats.  Premium character, high spawn rate.  Got to 25'ish defenses
   # - salt_crabs_fang  #fang cove salt crabs. - Not as good as I expected, still got me to grass eels.  35'ish defenses
   # - cougars_vineyard
